@@ -1,2 +1,6 @@
 name: luopanissues
 version: 0.1
+
+handlers:
+- url: /
+  static_path: app
