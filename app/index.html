@@ -10,8 +10,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- 将下面的 <meta> 标签加入到页面中，可以让部分国产浏览器默认采用高速模式渲染页面 -->
     <meta name="renderer" content="webkit">
+
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
   </head>
-<body>
-  成功打开
-</body>
+  <body>
+    成功打开
+  </body>
+
+  <script>
+  $(function(){
+    $.getJSON("test.json",function(result){
+        console.log(result)
+      });
+  });
+
+  </script>
 </html>
