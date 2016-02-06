@@ -2,27 +2,33 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>测试</title>
-
+    <title>luopan-issues</title>
     <meta name="description" content="">
-    <!-- <meta name="viewport" content="width=device-width"> -->
-    <!-- Bootstrap 不支持 IE 古老的兼容模式。为了让 IE 浏览器运行最新的渲染模式下 -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- 将下面的 <meta> 标签加入到页面中，可以让部分国产浏览器默认采用高速模式渲染页面 -->
-    <meta name="renderer" content="webkit">
+    <!--bower_components Javascript-->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.min.js"></script>
+    <script src="bower_components/angular-multi-select/isteven-multi-select.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 
-    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!--bower_components Css-->
+    <link rel="stylesheet" href="bower_components/angular-multi-select/isteven-multi-select.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+
+
+    <!-- angular Javascript-->
+    <script src="app.js"></script>
+    <script src="config.js"></script>
+    <script src="route.js"></script>
+    <script src="service/login.service.js"></script>
+    <script src="controller/login.controller.js"></script>
+
   </head>
-  <body>
-    成功打开
+  <body ng-app="gitLabApp" ng-cloak>
+    <div class="out-container" ng-view></div>
   </body>
-
-  <script>
-  $(function(){
-    $.getJSON("test.json",function(result){
-        console.log(result)
-      });
-  });
-
-  </script>
 </html>
