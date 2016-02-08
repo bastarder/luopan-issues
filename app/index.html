@@ -4,31 +4,38 @@
     <meta charset="utf-8">
     <title>luopan-issues</title>
     <meta name="description" content="">
-    <!--bower_components Javascript-->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
-    <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
-    <script src="bower_components/angular-messages/angular-messages.min.js"></script>
-    <script src="bower_components/angular-multi-select/isteven-multi-select.js"></script>
-    <script src="bower_components/angular-route/angular-route.min.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 
-    <!--bower_components Css-->
-    <link rel="stylesheet" href="bower_components/angular-multi-select/isteven-multi-select.css" />
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css" />
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!-- build:css(.) styles/vendor.css -->
+    <link rel="stylesheet" href="/bower_components/angular-multi-select/isteven-multi-select.css" />
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap-theme.css" />
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
 
-
-    <!-- angular Javascript-->
-    <script src="app.js"></script>
-    <script src="config.js"></script>
-    <script src="route.js"></script>
-    <script src="service/login.service.js"></script>
-    <script src="controller/login.controller.js"></script>
-
+    <link rel="stylesheet" href="styles/css/login.css" />
+    <!-- endbuild -->
   </head>
   <body ng-app="gitLabApp" ng-cloak>
+
     <div class="out-container" ng-view></div>
+
   </body>
+
+  <!-- build:js(.) scripts/vendor.js -->
+  <script src="/bower_components/jquery/dist/jquery.js"></script>
+  <script src="/bower_components/angular/angular.js"></script>
+  <script src="/bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+  <script src="/bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+  <script src="/bower_components/angular-messages/angular-messages.min.js"></script>
+  <script src="/bower_components/angular-multi-select/isteven-multi-select.js"></script>
+  <script src="/bower_components/angular-route/angular-route.min.js"></script>
+  <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <!-- endbuild -->
+
+  <!-- build:js(app) scripts/luopan-issues.js -->
+  <script src="app.js"></script>
+  <script src="config.js"></script>
+  <script src="route.js"></script>
+  <script src="service/login.service.js"></script>
+  <script src="controller/login.controller.js"></script>
+  <!-- endbuild -->
+
 </html>

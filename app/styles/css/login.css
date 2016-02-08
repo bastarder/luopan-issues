@@ -1,0 +1,75 @@
+.login hr {
+  margin: 0px;
+  padding: 0px;
+}
+.login .col-md-6 {
+  text-align: center;
+  border-radius: 3px;
+  border: 1px solid #eee;
+  box-shadow: 3px 3px 3px #eee;
+  margin-top: 40px;
+  height: 400px;
+  padding-top: 15px;
+}
+.login .form {
+  padding: 5px 100px 0px 100px;
+  margin-top: 20px;
+}
+.login .form input {
+  font-weight: 200;
+  margin-bottom: 5px;
+}
+.login .fox-,
+.login .fox-2,
+.login .fox-3,
+.login .fox-4,
+.login .fox-5,
+.login .fox-6,
+.login .fox-7 {
+  -webkit-animation: changeFillb 0.3s;
+  animation: changeFillb 0.3s;
+  opacity: 1;
+}
+.login .fox-1:hover,
+.login .fox-2:hover,
+.login .fox-3:hover,
+.login .fox-4:hover,
+.login .fox-5:hover,
+.login .fox-6:hover,
+.login .fox-7:hover {
+  -webkit-animation: changeFilla 0.3s;
+  animation: changeFilla 0.3s;
+  opacity: 0;
+}
+@-webkit-keyframes changeFilla {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes changeFilla {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes changeFillb {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes changeFillb {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
