@@ -7,17 +7,26 @@
   border-radius: 3px;
   border: 1px solid #eee;
   box-shadow: 3px 3px 3px #eee;
-  margin-top: 40px;
+  margin-top: 80px;
   height: 400px;
   padding-top: 15px;
+}
+.login button {
+  font-weight: 100;
 }
 .login .form {
   padding: 5px 100px 0px 100px;
   margin-top: 20px;
 }
+.login .form input.form-control {
+  box-shadow: inset 0 0px 0px #fff;
+}
 .login .form input {
-  font-weight: 200;
+  font-weight: 100;
   margin-bottom: 5px;
+}
+.login .alert {
+  margin-top: 20px;
 }
 .login .fox-,
 .login .fox-2,

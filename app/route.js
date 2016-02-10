@@ -14,7 +14,12 @@
           templateUrl  : getTemplate('login.controller'),
           controller   : 'LoginController',
           controllerAs : 'vm'
-        });
+        })
+        .when('/main', {
+          templateUrl  : getTemplate('main.controller'),
+          controller   : 'MainController',
+          controllerAs : 'vm'
+        })
     });
 
 })();

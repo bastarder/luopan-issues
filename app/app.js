@@ -5,6 +5,8 @@
         .module('gitLabApp', [
           'ng',
           'ngRoute',
-          'LocalStorageModule'
+          'LocalStorageModule',
+          'cgBusy',
+          'isteven-multi-select'
         ]);
 })();

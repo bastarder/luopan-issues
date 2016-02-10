@@ -1,0 +1,18 @@
+<div class="gi-search row">
+  <div cg-busy="{promise:vm.mileStonePromise,message:'获取中...'}" class="col-md-12">
+    <div ng-repeat="(key,group) in vm.milestoneGroup">
+      <span class="project">{{key}}</span>
+      <div
+        class="multi-select"
+        isteven-multi-select
+        input-model="group"
+        output-model="vm.mileStone[key]"
+        button-label="title"
+        item-label="title"
+        tick-property="ticked"
+        max-labels="1"
+        max-height="250px">
+      </div>
+    </div>
+  </div>
+</div>
