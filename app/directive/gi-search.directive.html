@@ -1,7 +1,7 @@
 <div class="gi-search row">
   <div cg-busy="{promise:vm.mileStonePromise,message:'获取中...'}" class="col-md-12">
     <div ng-repeat="(key,group) in vm.milestoneGroup">
-      <span class="project">{{key}}</span>
+      <span class="project">{{key | projectName}}</span>
       <div
         class="multi-select"
         isteven-multi-select

@@ -3,8 +3,16 @@
 
     angular
         .module('gitLabApp')
+        
         //url;
         .constant('API', 'http://180.97.80.177:8087/api/v3/')
+
+        //工程
+        .constant('PROJECT',{
+          '1': '客户系统',
+          '2': '客服系统',
+          '8': '后台系统'
+        })
 
         //需要展示的工程ID
         .constant('NEED_PROJECT',[

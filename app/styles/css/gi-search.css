@@ -12,7 +12,6 @@
   width: 200px;
 }
 .multiSelect > button {
-  text-overflow: ellipsis;
   width: 200px;
   display: inline-block;
   position: relative;
@@ -38,7 +37,6 @@
 }
 .multiSelect .buttonLabel {
   width: 180px;
-  text-overflow: ellipsis;
   display: inline-block;
   padding: 0px;
 }
