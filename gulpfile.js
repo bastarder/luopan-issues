@@ -20,17 +20,17 @@ gulp.task('connect', function() {
   connect.server({
     root: _root, //根目录
     host: _host, //ip
-    port: _port,
-    middleware: function(connect, opt) {
-      var con = connect().use(
-        '/bower_components',
-        connect.static('./bower_components')
-      );
-
-      var middlewares = [con];
-
-      return middlewares;
-    }
+    port: _port
+    // middleware: function(connect, opt) {
+    //   var con = connect().use(
+    //     'bower_components',
+    //     connect.static('bower_components')
+    //   );
+    //
+    //   var middlewares = [con];
+    //
+    //   return middlewares;
+    // }
   });
 });
 
