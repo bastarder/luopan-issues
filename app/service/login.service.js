@@ -5,10 +5,10 @@
         .module('gitLabApp')
         .service('LoginService', LoginService);
 
-    LoginService.$inject = ['$http', '$q', 'API', 'localStorageService'];
+    LoginService.$inject = ['$http', '$q', 'API', 'localStorageService', '$location'];
 
     /* @ngInject */
-    function LoginService($http, $q, API, localStorageService) {
+    function LoginService($http, $q, API, localStorageService, $location) {
         return {
             /**
              * @LoginService
@@ -91,8 +91,14 @@
                 };
 
                 return '';
-            }
+            },
 
+            logout:function(){
+              // localStorageService.clearAll();
+              localStorageService.remove('TOKEN');
+              localStorageService.remove('USER');
+              $location.path('/');
+            }
         };
     }
 })();

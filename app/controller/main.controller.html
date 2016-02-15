@@ -1,10 +1,105 @@
 <div class="main row">
 
-  <div class="col-md-3">
+  <div class="col-md-2 buttonGroup">
     <div gi-search mile-stone="vm.mileStone"></div>
+    <hr>
+    <button class="btn btn-default functionButton" ng-click="vm.createVersion()">更新页</button>
+    <button class="btn btn-default functionButton" ng-click="vm.createORVersion()">OR页</button>
+    <button class="btn btn-default functionButton" ng-click="vm.logout()">退出登录</button>
   </div>
 
-  <div class="col-md-9" style="padding:10px;">
+  <div class="col-md-9" cg-busy="{promise:vm.issuesPromise,message:'生成中...'}">
+    <div class="showData" ng-repeat="(project_id,project_issues) in vm.showData">
+      <legend>
+        <strong>{{project_id | projectName}}</strong>&nbsp;&nbsp;
+        <small ng-repeat="mile in vm.curMileStone[project_id]"> | {{mile.title}}</small>
+      </legend>
+
+      <!-- 简单数据统计 -->
+      <div class="group-count">
+        <span class="btn btn-xs btn-primary" ng-if="project_issues.issues[0].length>0">
+          BUG <span class="badge">{{ project_issues.issues[0].length }}</span>
+        </span>
+        <span class="btn btn-xs btn-danger" ng-if="project_issues.issues[1].length>0">
+          FEATURE <span class="badge">{{ project_issues.issues[1].length }}</span>
+        </span>
+        <span ng-repeat="(group,count) in project_issues.report"
+          class="btn btn-xs btn-info group-count-label">
+          {{group}}
+          <span class="badge">{{count.bug.length}}</span>
+          <span class="badge">{{count.feature.length}}</span>
+        </span>
+        <button class="btn btn-xs btn-danger"
+          type="button"
+          ng-if="(project_issues.issues[1].length>0 || project_issues.issues[0].length>0) && $index===0"
+          data-toggle="modal" data-target=".bs-example-modal-sm">
+          查看个人统计
+        </button>
+      </div>
+
+      <!-- issues列表 -->
+      <div>
+        <h3 ng-if="project_issues.issues[1].length<1 && project_issues.issues[0].length<1">无满足的要求的BUG或FEATURE</h3>
+        <table class="table table-bordered table-condensed" ng-if="project_issues.issues[1].length>0 || project_issues.issues[0].length>0">
+          <tr>
+            <th>序号</th>
+            <th>ID</th>
+            <th>分类</th>
+            <th>描述</th>
+            <th>解决人</th>
+          </tr>
+          <tr ng-if="project_issues.issues[0].length>0">
+            <td colspan="5" class="bg-danger">BUG</td>
+          </tr>
+          <tr ng-repeat="issue in project_issues.issues[0] | orderBy: 'mainLabel' ">
+            <td>{{$index+1}}</td>
+            <td>
+              <a
+               ng-href="{{vm.toIssueUrl.url}}{{vm.toIssueUrl.project[issue.project_id]}}/issues/{{issue.iid}}"
+               target="_blank">{{issue.iid}}</a>
+            </td>
+            <td>{{issue.mainLabel}}</td>
+            <td>{{issue.title}}</td>
+            <td>{{issue.assignee.name || issue.author.name}}</td>
+          </tr>
+          <tr ng-if="project_issues.issues[1].length>0">
+            <td colspan="5" class="bg-warning">FEATURE</td>
+          </tr>
+          <tr ng-repeat="issue in project_issues.issues[1] | orderBy: 'mainLabel'">
+            <td>{{$index+1}}</td>
+            <td>
+              <a
+               ng-href="{{vm.toIssueUrl.url}}{{vm.toIssueUrl.project[issue.project_id]}}/issues/{{issue.iid}}"
+               target="_blank">{{issue.iid}}</a>
+            </td>
+            <td>{{issue.mainLabel}}</td>
+            <td>{{issue.title}}</td>
+            <td>{{issue.assignee.name || issue.author.name}}</td>
+          </tr>
+        </table>
+
+      </div>
+
+    </div>
 
   </div>
+
+  <!-- personalReport modal -->
+  <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+    <div class="modal-dialog modal-sm">
+        <table class="modal-content table table-bordered table-condensed">
+          <tr>
+            <th>姓名</th>
+            <th>BUG</th>
+            <th>FEATURE</th>
+          </tr>
+          <tr ng-repeat="(name,issues) in vm.personalReport">
+            <td>{{name}}</td>
+            <td>{{issues.bug.length}}</td>
+            <td>{{issues.feature.length}}</td>
+          </tr>
+        </table>
+    </div>
+  </div>
+
 </div>

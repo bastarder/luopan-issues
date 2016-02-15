@@ -1,0 +1,24 @@
+.main .col-md-9 {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.main .btn-xs .badge {
+  top: -1px;
+}
+.main .showData legend {
+  margin-bottom: 5px;
+}
+.main .showData .group-count-label {
+  margin-right: 5px;
+}
+.main .showData .group-count span {
+  margin-bottom: 2px;
+}
+.main .buttonGroup {
+  padding-left: 25px;
+}
+.main .buttonGroup .functionButton {
+  width: 100%;
+  height: 30px;
+  margin-bottom: 3px;
+}
