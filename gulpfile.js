@@ -13,7 +13,7 @@ var rimraf = require('gulp-rimraf');
 var ngAnnotate = require('gulp-ng-annotate');
 var _root = 'app';
 var _host = '0.0.0.0';
-var _port = 9000;
+var _port = 9003;
 
 //创建本地测试服务;
 gulp.task('connect', function() {

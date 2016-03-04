@@ -36,7 +36,7 @@
             var issueGroup = result;
             issueGroup = issueGroup
                            .getByStatus(['closed'])
-                           .getByLabels('',['RESOLVED'],'');
+                           .getByLabels(['RESOLVED'],'','');
             vm.showData = issueGroup.init();
             vm.personalReport = issueGroup.getPersonalReport();
           })
@@ -57,7 +57,7 @@
       };
 
       function createPersonalReport(){
-        
+
       };
 
     }
