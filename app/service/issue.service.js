@@ -23,7 +23,8 @@
              return deferred.promise;
            }else{
              var parm = {
-               private_token:token
+               private_token : token,
+               per_page : 100
              };
            };
 
