@@ -5,8 +5,9 @@
 ## 一、install
 
 ```bash
-npm install
-bower install
+1 . npm install
+2 . cd app
+3 . bower install
 ```
 
 npm install失败时,可尝试添加淘宝源
