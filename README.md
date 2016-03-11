@@ -6,12 +6,10 @@
 
 ```bash
 npm install
+bower install
 ```
 
-* 建议执行 `npm install npm -g` 更新 npm 至最新版本
-* 建议删除原来项目的 `node_modules` 文件夹，重新执行 `npm install`;
-* 为了加快 npm 安装速度可以执行下面的命令，将 npm 源设置为 `taobao`;
-
+npm install失败时,可尝试添加淘宝源
 ```bash
 npm config set registry https://registry.npm.taobao.org
 ```
