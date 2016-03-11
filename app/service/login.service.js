@@ -94,7 +94,6 @@
             },
 
             logout:function(){
-              // localStorageService.clearAll();
               localStorageService.remove('TOKEN');
               localStorageService.remove('USER');
               $location.path('/');

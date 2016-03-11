@@ -11,7 +11,6 @@
     function IssueService($http, API, localStorageService, $q, GROUP_BY, MAIN_LABEL) {
        return {
          get: function(mileStones) {
-           console.log('版本号:',mileStones);
            var token = localStorageService.get('TOKEN');
            var promises = []; //存放所有请求;
            var deferred = $q.defer();
@@ -24,7 +23,7 @@
            }else{
              var parm = {
                private_token : token,
-               per_page : 100
+               per_page : 100 //单次查询上限最多100条;
              };
            };
 
@@ -51,7 +50,6 @@
                 result[projectId] = result[projectId].concat(response.data);
               });
               var results = new issueGroup(result);
-              // console.log(results.getByStatus(['closed']).getPersonalReport());
               deferred.resolve(results);
             })
 

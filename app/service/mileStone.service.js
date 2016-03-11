@@ -1,9 +1,6 @@
 (function() {
   'use strict';
 
-  //依赖：1.TokenService（身份码获取服务）
-  //#
-
   angular
     .module('gitLabApp')
     .service('mileStoneService',mileStoneService)

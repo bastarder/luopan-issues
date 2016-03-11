@@ -4,7 +4,7 @@
     angular
         .module('gitLabApp')
 
-        //url;
+        //API;
         .constant('API', 'http://180.97.80.177:8087/api/v3/')
 
         //跳转到指定issue
@@ -42,13 +42,16 @@
 
         //统计分类;
         .constant('MAIN_LABEL',{
+          //不被识别为类别的labels & 没有关键label时的默认类别;
           deleteLabels : ['RESOLVED','P1','P2','P3','P4','BUG','FEATURE','👿机票组','👿酒店组','👿基础组','👿客服组'],
           dafaultLabels : ['👿机票组','👿酒店组','👿基础组','👿客服组']
         })
+
         //组件配置;
         .config(['localStorageServiceProvider', function(localStorageServiceProvider) {
             localStorageServiceProvider.setPrefix('gitLabApp');
         }])
+        
         .value('cgBusyDefaults', {
           message: '数据加载中...',
           templateUrl: 'templates/loading.html'

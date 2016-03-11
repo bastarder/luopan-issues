@@ -25,7 +25,6 @@
       vm.personalReport = {};
       vm.createVersion = createVersion; //创建更新页面;
       vm.createORVersion = createORVersion; //创建OR页面;
-      vm.createPersonalReport = createPersonalReport;  //个人统计页面;
       vm.toIssueUrl = TO_ISSUE_PAGE;
       vm.logout = LoginService.logout;
 
@@ -47,7 +46,6 @@
         vm.issuesPromise = IssueService.get(vm.mileStone);
         vm.issuesPromise.then(function(result){
             var issueGroup = result;
-            console.log(result)
             issueGroup = issueGroup
                            .getByStatus(['opened','reopened'])
                            .getByLabels(['RESOLVED'],'','');
@@ -56,11 +54,8 @@
           })
       };
 
-      function createPersonalReport(){
-
-      };
-
     }
 
   };
+
 })();
